@@ -1,2 +1,4 @@
 name: Nidhal SAÏDANI
 markdown: V1
+permalink: /blog/:year/:month/:day/:title
+
