@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nidhalsaidani
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nidhalsaidani.com
+  * I am nidhalsaidani (https://keybase.io/nidhalsaidani) on keybase.
+  * I have a public key ASBD2GBy2-xcTVSs4LCH84Bm95KZXsdYFO1kYgckJJW_9wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101b3c56b84db91eab10f42a607e37c18081a34bd11bdf5bba361002e5ecabe13750a",
+      "host": "keybase.io",
+      "kid": "012043d86072dbec5c4d54ace0b087f38066f792995ec75814ed646207242495bff70a",
+      "uid": "1d5d94e64800ba49d75438d2bd2b9419",
+      "username": "nidhalsaidani"
+    },
+    "merkle_root": {
+      "ctime": 1595497411,
+      "hash": "e331b79d56cf5d692cb5f44a9d585cae4e909e3d026339040827135ab954b41b94d17ddbb510d593577d5d576a03390e719a363df24d6860ee70647ca62b1ea8",
+      "hash_meta": "e25f3e6f42c9f22ff1e3f6ff5cf89a3ecd95fc7571b2a7a8bcad27b925ddf993",
+      "seqno": 17056859
+    },
+    "service": {
+      "entropy": "MhYk2QYwHUB+oXOjouRagqi+",
+      "hostname": "nidhalsaidani.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1595497446,
+  "expire_in": 504576000,
+  "prev": "028c882d174423e373e3ce3643f432d5c880badbff8d480e311ce95961726741",
+  "seqno": 28,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgQ9hgctvsXE1UrOCwh/OAZveSmV7HWBTtZGIHJCSVv/cKp3BheWxvYWTESpcCHMQgAoyILRdEI+Nz4842Q/Qy1ciAutv/jUgOMRzpWWFyZ0HEIFkpujVzf/UeuTVfClSgn9wK5UZdfy1il0frQttY8+ueAgHCo3NpZ8RAzj+rn3jkFtSpcCiHSLAj3gkaf1uYrSPYKH0xXKoQ8pBELzh/GXuGuaMxcwDRfLvzw90UZFjwSQykZJfTEuG6B6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIG1F/7iPtsoqIaAYPgwz7pnUqeOetMoRknSsYzSW+igvo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nidhalsaidani
+
+==================================================================
