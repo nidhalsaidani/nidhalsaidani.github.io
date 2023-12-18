@@ -1,4 +1,3 @@
-# Nidhal Saïdani
 #### Intelligent Systems Engineering Graduate Student Specializing in Automation, Robotics, and Deep Learning
 
 ## Technical Skills:
