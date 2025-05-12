@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nidhal Saïdani</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 20px;
+    }
+    .hidden-email {
+      display: none;
+      margin-top: 5px;
+    }
+    .btn {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<table border="0">
+  <tr>
+    <td><strong>Nidhal Saïdani</strong></td>
+  </tr>
+  <tr>
+    <td>
+      Email: 
+      <div>
+        <button class="btn" onclick="toggleEmail()">Show email</button>
+        <div id="email" class="hidden-email">ns <i>at</i> pm <i>dot</i> me</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Phone: <i>Ask by email</i></td>
+  </tr>
+  <tr>
+    <td>
+      PGP Key: <a href="https://nidhalsaidani.com/pgp.txt" target="_blank">View public key</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Website: <a href="https://nidhalsaidani.com">https://nidhalsaidani.com</a>
+    </td>
+  </tr>
+</table>
+
+<script>
+  function toggleEmail() {
+    var email = document.getElementById("email");
+    email.style.display = email.style.display === "none" ? "inline" : "none";
+  }
+</script>
+
+</body>
+</html>
