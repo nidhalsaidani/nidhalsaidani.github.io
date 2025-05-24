@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nidhal Saïdani</title>
-    <link>https://nidhalsaidani.com/</link>
-    <description>Recent content on Nidhal Saïdani</description>
+    <title>Welcome to my personal website on Nidhal Saïdani</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome to my personal website on Nidhal Saïdani</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 May 2025 20:25:24 +0200</lastBuildDate>
-    <atom:link href="https://nidhalsaidani.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 May 2025 20:44:41 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Sat, 24 May 2025 20:44:41 +0200</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Sat, 24 May 2025 20:40:47 +0200</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Hello World</title>
-      <link>https://nidhalsaidani.com/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sat, 24 May 2025 20:25:24 +0200</pubDate>
-      <guid>https://nidhalsaidani.com/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;&#xA;&lt;p&gt;This is a sample post to demonstrate the structure of a Markdown file in a Hugo site. You can use this as a template for your own posts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://nidhalsaidani.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://nidhalsaidani.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Welcome to my About page!&lt;/p&gt;</description>
     </item>
   </channel>
