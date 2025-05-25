@@ -5,104 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nidhal Saïdani</title>
   <style>
-    /* Reset & base */
-    *, *::before, *::after {
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+    
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .container {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
-      line-height: 1.6;
-      padding: 1rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #bb86fc;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    main {
-      flex-grow: 1;
-      max-width: 600px;
-      margin: 0 auto;
       padding: 2rem;
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(187, 134, 252, 0.3);
       text-align: center;
     }
-
-    main p {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-
-    a {
-      color: #bb86fc;
-      text-decoration: none;
+    
+    h1 {
+      font-size: 2rem;
       font-weight: 600;
-      transition: color 0.3s ease;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
     }
-
-    a:hover,
-    a:focus {
-      color: #e29fff;
-      outline: none;
+    
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 280px;
     }
-
-    footer {
-      text-align: center;
+    
+    .link {
+      display: block;
       padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
+      background: #f5f5f7;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.2s ease;
+      border: none;
     }
-
-    /* Responsive */
+    
+    .link:hover {
+      background: #e8e8ed;
+      transform: scale(0.98);
+    }
+    
+    .link:active {
+      transform: scale(0.96);
+    }
+    
     @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
+      .container {
+        padding: 1rem;
       }
-
-      main {
-        padding: 1.5rem;
+      
+      h1 {
+        font-size: 1.75rem;
       }
-
-      main p {
-        font-size: 1rem;
+      
+      .links {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Nidhal Saïdani</h1>
-    <p>Welcome to my personal website where I share my projects and ideas.</p>
-  </header>
-
-  <main>
-    <p>Find my articles and updates on my blog at <a href="https://blog.nidhalsaidani.com" target="_blank" rel="noopener noreferrer">blog.nidhalsaidani.com</a>.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Nidhal Saïdani</p>
-  </footer>
+    <div class="links">
+      <a href="https://nidh.al/blog" class="link">Blog</a>
+      <a href="https://nidh.al/contact" class="link">Contact</a>
+      <a href="https://nidh.al/linkedin" class="link">LinkedIn</a>
+      <a href="https://nidh.al/github" class="link">GitHub</a>
+    </div>
+  </div>
 </body>
 </html>
