@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data-Free Quantization - Sorbonne University Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #003366;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #004080;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .team {
+      margin-top: 25px;
+      font-style: italic;
+      color: #444;
+    }
+
+    .overview-image {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer.footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .links {
+      margin: 30px 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .links a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Data-Free Quantization</h1>
+    <div class="date">Project duration: January – March 2024</div>
+
+    <h2>Project context</h2>
+    <p>
+      This project was developed as part of an academic research effort at <strong>Sorbonne University</strong>, led by Nidhal Saïdani in collaboration with team members Assil Mahfoudi, Abdelkader Amroun, and Hania Djamai.
+      The main goal is to explore and implement Data-Free Quantization (DFQ) techniques, which enable neural networks to be quantized efficiently without access to original training data, facilitating deployment on resource-constrained devices.
+    </p>
+
+    <h2>Project overview</h2>
+    <p>
+      The DFQ method reduces model size and computational requirements by quantizing weights, biases, and activations to low bit-widths, while maintaining high accuracy.
+      Our implementation includes multiple techniques such as bias correction, weight clipping, and dynamic quantization measurement.
+      The project demonstrates effectiveness on classification and segmentation tasks using popular models such as MobileNetV2 and DeepLabV3+.
+    </p>
+
+    <h2>System overview</h2>
+    <img src="https://github.com/KadAMRN/Data_Free_Quantization/raw/main/assets/quantization_pipeline.png" alt="Data-Free Quantization Pipeline" class="overview-image" loading="lazy" />
+
+    <h2>Project resources</h2>
+    <div class="links">
+      <a href="https://dropsu.sorbonne-universite.fr/s/EJHR4Ytt3g3CHrq" target="_blank" rel="noopener noreferrer">Project Report</a> |
+      <a href="https://github.com/KadAMRN/Data_Free_Quantization" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+    </div>
+
+    <h2>Key features</h2>
+    <ul>
+      <li>Data-free quantization for deep neural networks (no access to original training data required)</li>
+      <li>Quantization of weights, activations, and biases with 8-bit precision</li>
+      <li>Bias correction and weight clipping to improve accuracy</li>
+      <li>Support for classification and segmentation tasks</li>
+      <li>Visualization of weight distributions before and after quantization</li>
+      <li>Easy environment setup with virtualenv and conda</li>
+    </ul>
+
+    <h2>Sample outputs</h2>
+    <img src="https://github.com/KadAMRN/Data_Free_Quantization/raw/main/assets/24AtVXa.png" alt="Histogram of weights before and after DFQ" class="overview-image" loading="lazy" />
+    <img src="https://github.com/KadAMRN/Data_Free_Quantization/raw/main/assets/BzLd4H1.jpg" alt="Boxplot of weight distributions after quantization" class="overview-image" loading="lazy" />
+
+    <h2>Team members</h2>
+    <p class="team">
+      Nidhal Saïdani, Assil Mahfoudi, Abdelkader Amroun, Hania Djamai<br />
+      Sorbonne University
+    </p>
+
+    <footer class="footer">
+      &copy; 2024 Nidhal Saïdani
+    </footer>
+  </div>
+</body>
+</html>
