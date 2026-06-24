@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { sortByDate, formatDate } from '../lib/utils';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort(sortByDate);
+---
+
+<Layout title="Blog" description="Blog posts and articles">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-bold font-serif text-gray-900 dark:text-gray-100 mb-4">
+      Blog
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
+      Thoughts on research, technology, and academia
+    </p>
+    
+    <div class="space-y-6">
+      {sortedPosts.map((post) => (
+        <article class="card">
+          <a href={`/blog/${post.slug}/`} class="block group">
+            {post.data.heroImage && (
+              <img
+                src={post.data.heroImage}
+                alt={post.data.title}
+                class="w-full h-48 object-cover rounded-lg mb-4 group-hover:opacity-90 transition-opacity"
+              />
+            )}
+            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-2">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {formatDate(post.data.pubDate)}
+              </time>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="flex gap-2">
+                  {post.data.tags.map((tag) => (
+                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+              {post.data.title}
+            </h2>
+            {post.data.description && (
+              <p class="text-gray-600 dark:text-gray-400">
+                {post.data.description}
+              </p>
+            )}
+          </a>
+        </article>
+      ))}
+      
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-12">
+          <p class="text-gray-500 dark:text-gray-400">
+            No blog posts yet. Check back soon!
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

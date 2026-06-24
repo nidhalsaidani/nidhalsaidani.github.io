@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Astro" />
+    <link rel="canonical" href={Astro.url.href} />
+    
+    <!-- SEO -->
+    <title>{Astro.props.title} | {siteConfig.site.title}</title>
+    <meta name="description" content={Astro.props.description || siteConfig.site.description} />
+    <meta name="author" content={siteConfig.site.author} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:description" content={Astro.props.description || siteConfig.site.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={Astro.props.image || '/og-image.png'} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={Astro.props.title} />
+    <meta name="twitter:description" content={Astro.props.description || siteConfig.site.description} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      
+      @layer base {
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        body {
+          @apply bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-300;
+        }
+      }
+      
+      @layer components {
+        .btn-primary {
+          @apply px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-200;
+        }
+        
+        .btn-secondary {
+          @apply px-6 py-2.5 border border-gray-300 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-card text-gray-700 dark:text-gray-300 font-medium rounded-lg transition-colors duration-200;
+        }
+        
+        .card {
+          @apply p-6 bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200;
+        }
+        
+        .prose-custom {
+          @apply prose dark:prose-invert max-w-none;
+          @apply prose-headings:font-serif prose-headings:font-semibold;
+          @apply prose-a:text-primary-600 dark:prose-a:text-primary-400;
+          @apply prose-img:rounded-lg;
+        }
+      }
+    </style>
+    
+    <!-- Dark mode script -->
+    <script>
+      // Check for saved theme preference or default to system preference
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot name="header" />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+    
+    <slot name="footer" />
+    
+    <!-- Theme toggle script -->
+    <script>
+      function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.theme = 'light';
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.theme = 'dark';
+        }
+      }
+    </script>
+  </body>
+</html>

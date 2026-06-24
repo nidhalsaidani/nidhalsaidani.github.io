@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../config';
+
+const { name, tagline, bio, research_interests } = siteConfig.home;
+---
+
+<Layout title="About" description={`About ${name}`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold font-serif text-gray-900 dark:text-gray-100 mb-4">
+        About Me
+      </h1>
+      <p class="text-xl text-primary-600 dark:text-primary-400">
+        {tagline}
+      </p>
+    </div>
+    
+    <div class="card prose dark:prose-invert max-w-none">
+      {bio}
+    </div>
+    
+    <div class="mt-8 card">
+      <h2 class="text-2xl font-semibold font-serif text-gray-900 dark:text-gray-100 mb-4">
+        Research Interests
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {research_interests.map((interest) => (
+          <span class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
+            {interest}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

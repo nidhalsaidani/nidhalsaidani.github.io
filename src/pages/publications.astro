@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPublications = await getCollection('publications');
+const featuredPublications = allPublications.filter(({ data }) => data.featured);
+const otherPublications = allPublications.filter(({ data }) => !data.featured);
+
+// Group by year
+const publicationsByYear = new Map();
+allPublications.forEach((pub) => {
+  const year = pub.data.year;
+  if (!publicationsByYear.has(year)) {
+    publicationsByYear.set(year, []);
+  }
+  publicationsByYear.get(year).push(pub);
+});
+
+const sortedYears = Array.from(publicationsByYear.keys()).sort((a, b) => b - a);
+---
+
+<Layout title="Publications" description="Academic publications and papers">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-4xl font-bold font-serif text-gray-900 dark:text-gray-100 mb-4">
+      Publications
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
+      Academic papers, articles, and preprints
+    </p>
+    
+    <div class="space-y-12">
+      {sortedYears.map((year) => (
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-dark-border">
+            {year}
+          </h2>
+          <div class="space-y-6">
+            {publicationsByYear.get(year).map((pub) => (
+              <article class="card">
+                <div class="flex items-start gap-2 mb-2">
+                  {pub.data.type === 'journal' && (
+                    <span class="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded text-xs font-medium">
+                      Journal
+                    </span>
+                  )}
+                  {pub.data.type === 'conference' && (
+                    <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs font-medium">
+                      Conference
+                    </span>
+                  )}
+                  {pub.data.type === 'working_paper' && (
+                    <span class="px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded text-xs font-medium">
+                      Working Paper
+                    </span>
+                  )}
+                  {pub.data.featured && (
+                    <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-xs font-medium">
+                      Featured
+                    </span>
+                  )}
+                </div>
+                
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  {pub.data.title}
+                </h3>
+                
+                <p class="text-gray-600 dark:text-gray-400 mb-2">
+                  {pub.data.authors.join(', ')}
+                </p>
+                
+                <p class="text-gray-500 dark:text-gray-500 mb-4">
+                  <em>{pub.data.venue}</em>
+                </p>
+                
+                <div class="flex flex-wrap gap-3">
+                  {pub.data.link && (
+                    <a
+                      href={pub.data.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <svg class="w-4 h4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Publisher
+                    </a>
+                  )}
+                  {pub.data.pdf && (
+                    <a
+                      href={pub.data.pdf}
+                      target
